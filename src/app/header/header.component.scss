@@ -6,7 +6,12 @@ nav {
   position: fixed;
   bottom: 0;
   width: 100%;
-  background: rgba($light-blue-color, 0.7);
+  background: rgba($secondary-color, 0.7);
+
+  a {
+    text-decoration: none;
+    color: $primary-color;
+  }
 
   img {
     width: 40px;
@@ -26,7 +31,7 @@ nav {
       margin: 0 10px;
       width: 30px;
       height: 30px;
-      background-color: $tan-color;
+      background-color: $background-color;
       border-radius: 50%;
       text-align: center;
     }
