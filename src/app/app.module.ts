@@ -9,17 +9,19 @@ import { InformationComponent } from "./information/information.component";
 import { AboutComponent } from "./about/about.component";
 import { ContactComponent } from "./contact/contact.component";
 import { L1InformationComponent } from "./contact/l1-information/l1-information.component";
-import { HomeComponent } from './home/home.component';
+import { HomeComponent } from "./home/home.component";
+import { ContactInformationComponent } from './contact/contact-information/contact-information.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
+    HomeComponent,
     InformationComponent,
     AboutComponent,
     ContactComponent,
     L1InformationComponent,
-    HomeComponent
+    ContactInformationComponent
   ],
   imports: [BrowserModule, HttpClientModule, AppRoutingModule],
   providers: [],

@@ -9,12 +9,4 @@ export class ContactComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
-
-  ngAfterViewInit() {
-    document.querySelector("body").classList.add("background-other");
-  }
-
-  ngOnDestroy() {
-    document.querySelector("body").classList.remove("background-other");
-  }
 }
