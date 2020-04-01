@@ -1,5 +1,6 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
 import { AppRoutingModule } from "./app-routing.module";
@@ -10,7 +11,7 @@ import { AboutComponent } from "./about/about.component";
 import { ContactComponent } from "./contact/contact.component";
 import { L1InformationComponent } from "./contact/l1-information/l1-information.component";
 import { HomeComponent } from "./home/home.component";
-import { ContactInformationComponent } from './contact/contact-information/contact-information.component';
+import { ContactInformationComponent } from "./contact/contact-information/contact-information.component";
 
 @NgModule({
   declarations: [
@@ -23,7 +24,7 @@ import { ContactInformationComponent } from './contact/contact-information/conta
     L1InformationComponent,
     ContactInformationComponent
   ],
-  imports: [BrowserModule, HttpClientModule, AppRoutingModule],
+  imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
   providers: [],
   bootstrap: [AppComponent]
 })
