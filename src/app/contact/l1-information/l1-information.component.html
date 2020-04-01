@@ -1,6 +1,6 @@
 <div class="row">
   <h2 class="title-page">information form</h2>
-  <form [formGroup]="informationForm" (onSubmit)="onSubmit()">
+  <form>
     <p>
       Please fill out the form below to let Gold Coast Imact Capital Group
       better understand how they can help you in the future.
@@ -15,7 +15,8 @@
           id="contact-name"
           type="text"
           class="form-control"
-          formControlName="contact-name"
+          ngModel
+          name="contact-name"
         />
       </div>
     </div>
@@ -31,7 +32,8 @@
           id="contact-address"
           type="text"
           class="form-control"
-          formControlName="contact-address"
+          ngModel
+          name="contact-address"
         />
       </div>
     </div>
@@ -45,7 +47,8 @@
           id="contact-city"
           type="text"
           class="form-control"
-          formControlName="contact-city"
+          ngModel
+          name="contact-city"
         />
       </div>
     </div>
@@ -59,7 +62,8 @@
           id="contact-state"
           type="text"
           class="form-control"
-          formControlName="contact-state"
+          ngModel
+          name="contact-state"
         />
       </div>
       <label for="contact-zip" class="col-2 col-md-1 col-form-label text-center"
@@ -70,7 +74,8 @@
           id="contact-zip"
           type="number"
           class="form-control"
-          formControlName="contact-zip"
+          ngModel
+          name="contact-zip"
         />
       </div>
     </div>
@@ -84,7 +89,8 @@
           id="contact-email"
           type="text"
           class="form-control"
-          formControlName="contact-email"
+          ngModel
+          name="contact-email"
         />
       </div>
     </div>
@@ -95,7 +101,8 @@
           class="form-check-input"
           type="checkbox"
           id="newsletterCheck"
-          formControlName="newsletter"
+          ngModel
+          name="newsletter"
         />
         <label class="form-check-label" for="newsletterCheck">
           I would like to receive a quarterly newsletter to continue learning
@@ -111,7 +118,8 @@
           class="form-check-input"
           type="checkbox"
           id="emailContact"
-          formControlName="contact-method-email"
+          ngModel
+          name="contact-method-email"
         />
         <label class="form-check-label" for="emailContact">
           Email
@@ -122,7 +130,8 @@
           class="form-check-input"
           type="checkbox"
           id="textContact"
-          formControlName="contact-method-text"
+          ngModel
+          name="contact-method-text"
         />
         <label class="form-check-label" for="textContact">
           Text
@@ -133,7 +142,8 @@
           class="form-check-input"
           type="checkbox"
           id="callDay"
-          formControlName="contact-method-day"
+          ngModel
+          name="contact-method-day"
         />
         <label class="form-check-label" for="callDay">
           Call in the day
@@ -144,7 +154,8 @@
           class="form-check-input"
           type="checkbox"
           id="callEvening"
-          formControlName="contact-method-evening"
+          ngModel
+          name="contact-method-evening"
         />
         <label class="form-check-label" for="callEvening">
           Call in the evening
@@ -163,7 +174,8 @@
           id="contact-day"
           type="number"
           class="form-control"
-          formControlName="contact-day"
+          ngModel
+          name="contact-day"
         />
       </div>
     </div>
@@ -179,7 +191,8 @@
           id="contact-evening"
           type="number"
           class="form-control"
-          formControlName="contact-evening"
+          ngModel
+          name="contact-evening"
         />
       </div>
     </div>
@@ -193,7 +206,8 @@
           id="contact-cell"
           type="number"
           class="form-control"
-          formControlName="contact-cell"
+          ngModel
+          name="contact-cell"
         />
       </div>
     </div>
@@ -212,7 +226,8 @@
           name="privateLenderOptions"
           id="privateLenderOptionsYes"
           value="yes"
-          formControlName="private-lender-option-yes"
+          ngModel
+          name="private-lender-option-yes"
         />
         <label class="form-check-label" for="privateLenderOptionsYes">
           <span>yes!</span> I would like to join the Impact team as a private
@@ -226,7 +241,8 @@
           name="privateLenderOptions"
           id="privateLenderOptionsMaybe1"
           value="maybe1"
-          formControlName="private-lender-option-maybe-1"
+          ngModel
+          name="private-lender-option-maybe-1"
         />
         <label class="form-check-label" for="privateLenderOptionsMaybe1">
           <span>maybe!</span> I'm very interested but I have some questions I'd
@@ -240,7 +256,8 @@
           name="privateLenderOptions"
           id="privateLenderOptionsMaybe2"
           value="maybe2"
-          formControlName="private-lender-option-maybe-2"
+          ngModel
+          name="private-lender-option-maybe-2"
         />
         <label class="form-check-label" for="privateLenderOptionsMaybe2">
           <span>maybe!</span> I'm interested but I want to think about it.
@@ -254,7 +271,8 @@
           name="privateLenderOptions"
           id="privateLenderOptionsNo"
           value="no"
-          formControlName="private-lender-option-no"
+          ngModel
+          name="private-lender-option-no"
         />
         <label class="form-check-label" for="privateLenderOptionsNo">
           <span>no!</span> I'm just not ready to be a private lender at this
@@ -270,7 +288,8 @@
           class="form-check-input"
           type="checkbox"
           id="certificateOfDeposit"
-          formControlName="certificate-of-deposite"
+          ngModel
+          name="certificate-of-deposit"
         />
         <label class="form-check-label" for="certificateOfDeposit">
           Bank Certificate of Deposite
@@ -281,7 +300,8 @@
           class="form-check-input"
           type="checkbox"
           id="pensionPlan"
-          formControlName="pension"
+          ngModel
+          name="pension"
         />
         <label class="form-check-label" for="pensionPlan">
           IRA and 401K Pension Plans
@@ -292,7 +312,8 @@
           class="form-check-input"
           type="checkbox"
           id="wholeLifeInsurance"
-          formControlName="whole-life-insurance"
+          ngModel
+          name="whole-life-insurance"
         />
         <label class="form-check-label" for="wholeLifeInsurance">
           Whole Life Insurance Policy
@@ -303,7 +324,8 @@
           class="form-check-input"
           type="checkbox"
           id="homeEquityLineOfCredit"
-          formControlName="home-equity-line-of-credit"
+          ngModel
+          name="home-equity-line-of-credit"
         />
         <label class="form-check-label" for="homeEquityLineOfCredit">
           Home Equity Line of Credit
