@@ -1,14 +1,16 @@
 <div class="row">
   <h2 class="title-page">information form</h2>
-  <form>
+  <form [formGroup]="informationForm" (onSubmit)="onSubmit()">
     <p>
       Please fill out the form below to let Gold Coast Imact Capital Group
       better understand how they can help you in the future.
     </p>
 
     <div class="form-group row">
-      <label for="contact-name" class="col-3 col-form-label">Name:</label>
-      <div class="col-9">
+      <label for="contact-name" class="col-3 col-md-1 col-form-label"
+        >Name:</label
+      >
+      <div class="col-9 col-md-11">
         <input
           id="contact-name"
           type="text"
@@ -19,8 +21,12 @@
     </div>
 
     <div class="form-group row">
-      <label for="contact-name" class="col-3 col-form-label">Address:</label>
-      <div class="col-9">
+      <label
+        for="contact-address"
+        class="col-3 col-md-2 col-lg-1 col-form-label"
+        >Address:</label
+      >
+      <div class="col-9 col-md-10 col-lg-11">
         <input
           id="contact-address"
           type="text"
@@ -31,8 +37,10 @@
     </div>
 
     <div class="form-group row">
-      <label for="contact-city" class="col-2 col-form-label">City:</label>
-      <div class="col-10">
+      <label for="contact-city" class="col-2 col-md-1 col-form-label"
+        >City:</label
+      >
+      <div class="col-10 col-md-11">
         <input
           id="contact-city"
           type="text"
@@ -43,8 +51,10 @@
     </div>
 
     <div class="form-group row">
-      <label for="contact-state" class="col-2 col-form-label">State:</label>
-      <div class="col-2">
+      <label for="contact-state" class="col-2 col-md-1 col-form-label"
+        >State:</label
+      >
+      <div class="col-2 col-md-3">
         <input
           id="contact-state"
           type="text"
@@ -52,10 +62,10 @@
           formControlName="contact-state"
         />
       </div>
-      <label for="contact-zip" class="col-2 col-form-label text-center"
+      <label for="contact-zip" class="col-2 col-md-1 col-form-label text-center"
         >Zip:</label
       >
-      <div class="col-6">
+      <div class="col-6 col-md-7">
         <input
           id="contact-zip"
           type="number"
@@ -66,8 +76,10 @@
     </div>
 
     <div class="form-group row">
-      <label for="contact-email" class="col-2 col-form-label">Email:</label>
-      <div class="col-10">
+      <label for="contact-email" class="col-2 col-md-1 col-form-label"
+        >Email:</label
+      >
+      <div class="col-10 col-md-11">
         <input
           id="contact-email"
           type="text"
@@ -79,7 +91,12 @@
 
     <div class="form-group row">
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="newsletterCheck" />
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="newsletterCheck"
+          formControlName="newsletter"
+        />
         <label class="form-check-label" for="newsletterCheck">
           I would like to receive a quarterly newsletter to continue learning
           more about private lending and Impacts journey.
@@ -90,25 +107,45 @@
     <div class="form-group row">
       Preferred contact method:
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="emailContact" />
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="emailContact"
+          formControlName="contact-method-email"
+        />
         <label class="form-check-label" for="emailContact">
           Email
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="textContact" />
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="textContact"
+          formControlName="contact-method-text"
+        />
         <label class="form-check-label" for="textContact">
           Text
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="callDay" />
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="callDay"
+          formControlName="contact-method-day"
+        />
         <label class="form-check-label" for="callDay">
           Call in the day
         </label>
       </div>
       <div class="form-check">
-        <input class="form-check-input" type="checkbox" id="callEvening" />
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="callEvening"
+          formControlName="contact-method-evening"
+        />
         <label class="form-check-label" for="callEvening">
           Call in the evening
         </label>
@@ -118,8 +155,10 @@
     <p>Please provide phone number(s):</p>
 
     <div class="form-group row">
-      <label for="contact-day" class="col-3 col-form-label">Day:</label>
-      <div class="col-9">
+      <label for="contact-day" class="col-3 col-md-1 col-form-label"
+        >Day:</label
+      >
+      <div class="col-9 col-md-4 col-lg-2">
         <input
           id="contact-day"
           type="number"
@@ -130,8 +169,12 @@
     </div>
 
     <div class="form-group row">
-      <label for="contact-evening" class="col-3 col-form-label">Evening:</label>
-      <div class="col-9">
+      <label
+        for="contact-evening"
+        class="col-3 col-md-2 col-lg-1 col-form-label"
+        >Evening:</label
+      >
+      <div class="col-9 col-md-3 col-lg-2">
         <input
           id="contact-evening"
           type="number"
@@ -142,8 +185,10 @@
     </div>
 
     <div class="form-group row">
-      <label for="contact-cell" class="col-3 col-form-label">Cell:</label>
-      <div class="col-9">
+      <label for="contact-cell" class="col-3 col-md-1 col-form-label"
+        >Cell:</label
+      >
+      <div class="col-9 col-md-4 col-lg-2">
         <input
           id="contact-cell"
           type="number"
@@ -167,6 +212,7 @@
           name="privateLenderOptions"
           id="privateLenderOptionsYes"
           value="yes"
+          formControlName="private-lender-option-yes"
         />
         <label class="form-check-label" for="privateLenderOptionsYes">
           <span>yes!</span> I would like to join the Impact team as a private
@@ -180,6 +226,7 @@
           name="privateLenderOptions"
           id="privateLenderOptionsMaybe1"
           value="maybe1"
+          formControlName="private-lender-option-maybe-1"
         />
         <label class="form-check-label" for="privateLenderOptionsMaybe1">
           <span>maybe!</span> I'm very interested but I have some questions I'd
@@ -193,6 +240,7 @@
           name="privateLenderOptions"
           id="privateLenderOptionsMaybe2"
           value="maybe2"
+          formControlName="private-lender-option-maybe-2"
         />
         <label class="form-check-label" for="privateLenderOptionsMaybe2">
           <span>maybe!</span> I'm interested but I want to think about it.
@@ -206,6 +254,7 @@
           name="privateLenderOptions"
           id="privateLenderOptionsNo"
           value="no"
+          formControlName="private-lender-option-no"
         />
         <label class="form-check-label" for="privateLenderOptionsNo">
           <span>no!</span> I'm just not ready to be a private lender at this
@@ -213,5 +262,69 @@
         </label>
       </div>
     </div>
+
+    <div class="form-group row">
+      <h5>I would like more information about using lender funds from:</h5>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="certificateOfDeposit"
+          formControlName="certificate-of-deposite"
+        />
+        <label class="form-check-label" for="certificateOfDeposit">
+          Bank Certificate of Deposite
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="pensionPlan"
+          formControlName="pension"
+        />
+        <label class="form-check-label" for="pensionPlan">
+          IRA and 401K Pension Plans
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="wholeLifeInsurance"
+          formControlName="whole-life-insurance"
+        />
+        <label class="form-check-label" for="wholeLifeInsurance">
+          Whole Life Insurance Policy
+        </label>
+      </div>
+      <div class="form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="homeEquityLineOfCredit"
+          formControlName="home-equity-line-of-credit"
+        />
+        <label class="form-check-label" for="homeEquityLineOfCredit">
+          Home Equity Line of Credit
+        </label>
+      </div>
+    </div>
+
+    <div class="disclaimer-header">
+      <hr />
+      <p>Disclaimer</p>
+      <hr />
+    </div>
+    <p>
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Eaque tempore
+      sapiente molestias, nulla porro, voluptatum sunt modi dolorum in suscipit
+      adipisci cumque? Deserunt vel temporibus aut accusantium quibusdam soluta
+      minus.
+    </p>
+
+    <button type="submit" class="btn btn-primary">
+      Submit
+    </button>
   </form>
 </div>
