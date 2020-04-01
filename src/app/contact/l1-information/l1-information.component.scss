@@ -29,7 +29,8 @@
   width: 100%;
 }
 
-input[type="checkbox"] {
+input[type="checkbox"],
+input[type="radio"] {
   position: absolute;
   width: 15px;
   height: 15px;
@@ -47,11 +48,23 @@ input[type="checkbox"] {
   }
 }
 
-input:checked[type="checkbox"]:before {
+input:checked[type="checkbox"]:before,
+input:checked[type="radio"]:before {
   border-left: none;
   border-top: none;
   width: 7.5px;
   border-color: $secondary-color;
   border-width: 3px;
   transform: rotate(45deg);
+}
+
+h5 {
+  color: $primary-color;
+  font-weight: $primary-font-weight;
+}
+
+span {
+  color: $secondary-color;
+  font-weight: $primary-font-weight;
+  text-transform: uppercase;
 }
