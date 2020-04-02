@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { NgForm } from "@angular/forms";
 
 @Component({
   selector: "app-l1-information",
@@ -6,9 +7,22 @@ import { Component, OnInit } from "@angular/core";
   styleUrls: ["./l1-information.component.scss"]
 })
 export class L1InformationComponent implements OnInit {
+  returnClass = true;
+  mobile = false;
+
   constructor() {}
 
-  ngOnInit(): void {}
+  onSubmit(form: NgForm) {
+    console.log(form);
+  }
+
+  ngOnInit() {
+    if (window.screen.width <= 375) {
+      this.mobile = true;
+    } else {
+      this.mobile = false;
+    }
+  }
 
   ngAfterViewInit() {
     document.querySelector("body").classList.add("background-other");

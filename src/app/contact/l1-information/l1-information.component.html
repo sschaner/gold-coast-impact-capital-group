@@ -1,6 +1,6 @@
 <div class="row">
   <h2 class="title-page">information form</h2>
-  <form>
+  <form ngNativeValidate (ngSubmit)="onSubmit(f)" #f="ngForm">
     <p>
       Please fill out the form below to let Gold Coast Imact Capital Group
       better understand how they can help you in the future.
@@ -17,7 +17,14 @@
           class="form-control"
           ngModel
           name="contact-name"
+          required
+          #contactName="ngModel"
         />
+        <span
+          class="form-text error-message"
+          *ngIf="!contactName.valid && contactName.touched"
+          >Please enter your name.</span
+        >
       </div>
     </div>
 
@@ -34,7 +41,14 @@
           class="form-control"
           ngModel
           name="contact-address"
+          required
+          #contactAddress="ngModel"
         />
+        <span
+          class="form-text error-message"
+          *ngIf="!contactAddress.valid && contactAddress.touched"
+          >Please enter your address.</span
+        >
       </div>
     </div>
 
@@ -49,7 +63,14 @@
           class="form-control"
           ngModel
           name="contact-city"
+          required
+          #contactCity="ngModel"
         />
+        <span
+          class="form-text error-message"
+          *ngIf="!contactCity.valid && contactCity.touched"
+          >Please enter your city.</span
+        >
       </div>
     </div>
 
@@ -64,7 +85,20 @@
           class="form-control"
           ngModel
           name="contact-state"
+          maxlength="2"
+          required
+          #contactState="ngModel"
         />
+        <span
+          class="form-text error-message"
+          *ngIf="!contactState.valid && contactState.touched && mobile"
+          >State?</span
+        >
+        <span
+          class="form-text error-message"
+          *ngIf="!contactState.valid && contactState.touched && !mobile"
+          >Please enter a state.</span
+        >
       </div>
       <label for="contact-zip" class="col-2 col-md-1 col-form-label text-center"
         >Zip:</label
@@ -72,11 +106,20 @@
       <div class="col-6 col-md-7">
         <input
           id="contact-zip"
-          type="number"
+          type="text"
+          pattern="\d*"
           class="form-control"
           ngModel
           name="contact-zip"
+          maxlength="5"
+          required
+          #contactZip="ngModel"
         />
+        <span
+          class="form-text error-message"
+          *ngIf="!contactZip.valid && contactZip.touched"
+          >Please enter a zip code.</span
+        >
       </div>
     </div>
 
@@ -91,7 +134,15 @@
           class="form-control"
           ngModel
           name="contact-email"
+          required
+          email
+          #contactEmail="ngModel"
         />
+        <span
+          class="form-text error-message"
+          *ngIf="!contactEmail.valid && contactEmail.touched"
+          >Please enter a valid email.</span
+        >
       </div>
     </div>
 
@@ -102,6 +153,7 @@
           type="checkbox"
           id="newsletterCheck"
           ngModel
+          #contactMethodNewsletter="ngModel"
           name="newsletter"
         />
         <label class="form-check-label" for="newsletterCheck">
@@ -119,6 +171,7 @@
           type="checkbox"
           id="emailContact"
           ngModel
+          #contactMethodEmail="ngModel"
           name="contact-method-email"
         />
         <label class="form-check-label" for="emailContact">
@@ -131,6 +184,7 @@
           type="checkbox"
           id="textContact"
           ngModel
+          #contactMethodText="ngModel"
           name="contact-method-text"
         />
         <label class="form-check-label" for="textContact">
@@ -143,6 +197,7 @@
           type="checkbox"
           id="callDay"
           ngModel
+          #contactMethodDay="ngModel"
           name="contact-method-day"
         />
         <label class="form-check-label" for="callDay">
@@ -155,6 +210,7 @@
           type="checkbox"
           id="callEvening"
           ngModel
+          #contactMethodEvening="ngModel"
           name="contact-method-evening"
         />
         <label class="form-check-label" for="callEvening">
@@ -163,52 +219,81 @@
       </div>
     </div>
 
-    <p>Please provide phone number(s):</p>
+    <p
+      *ngIf="
+        contactMethodText.value ||
+        contactMethodDay.value ||
+        contactMethodEvening.value
+      "
+    >
+      Please provide phone number(s):
+    </p>
 
-    <div class="form-group row">
-      <label for="contact-day" class="col-3 col-md-1 col-form-label"
-        >Day:</label
-      >
-      <div class="col-9 col-md-4 col-lg-2">
-        <input
-          id="contact-day"
-          type="number"
-          class="form-control"
-          ngModel
-          name="contact-day"
-        />
-      </div>
-    </div>
-
-    <div class="form-group row">
-      <label
-        for="contact-evening"
-        class="col-3 col-md-2 col-lg-1 col-form-label"
-        >Evening:</label
-      >
-      <div class="col-9 col-md-3 col-lg-2">
-        <input
-          id="contact-evening"
-          type="number"
-          class="form-control"
-          ngModel
-          name="contact-evening"
-        />
-      </div>
-    </div>
-
-    <div class="form-group row">
+    <div class="form-group row" *ngIf="contactMethodText.value">
       <label for="contact-cell" class="col-3 col-md-1 col-form-label"
         >Cell:</label
       >
-      <div class="col-9 col-md-4 col-lg-2">
+      <div class="col-9 col-md-5 col-lg-3">
         <input
           id="contact-cell"
           type="number"
           class="form-control"
           ngModel
+          required
+          #contactCell="ngModel"
           name="contact-cell"
         />
+        <span
+          class="form-text error-message"
+          *ngIf="!contactCell.valid && contactCell.touched"
+          >Please enter a cell number.</span
+        >
+      </div>
+    </div>
+
+    <div class="form-group row" *ngIf="contactMethodDay.value">
+      <label for="contact-day" class="col-3 col-md-1 col-form-label"
+        >Day:</label
+      >
+      <div class="col-9 col-md-5 col-lg-3">
+        <input
+          id="contact-day"
+          type="number"
+          class="form-control"
+          ngModel
+          required
+          #contactDay="ngModel"
+          name="contact-day"
+        />
+        <span
+          class="form-text error-message"
+          *ngIf="!contactDay.valid && contactDay.touched"
+          >Please enter a day phone number.</span
+        >
+      </div>
+    </div>
+
+    <div class="form-group row" *ngIf="contactMethodEvening.value">
+      <label
+        for="contact-evening"
+        class="col-3 col-md-2 col-lg-1 col-form-label"
+        >Evening:</label
+      >
+      <div class="col-9 col-md-4 col-lg-3">
+        <input
+          id="contact-evening"
+          type="number"
+          class="form-control"
+          ngModel
+          required
+          #contactEvening="ngModel"
+          name="contact-evening"
+        />
+        <span
+          class="form-text error-message"
+          *ngIf="!contactEvening.valid && contactEvening.touched"
+          >Please enter an evening phone.</span
+        >
       </div>
     </div>
 
@@ -217,7 +302,7 @@
       your information or continuously contact you.
     </p>
 
-    <div class="form-group row">
+    <!-- <div class="form-group row">
       <h5>Private Lender Options</h5>
       <div class="form-check">
         <input
@@ -260,26 +345,12 @@
           name="private-lender-option-maybe-2"
         />
         <label class="form-check-label" for="privateLenderOptionsMaybe2">
-          <span>maybe!</span> I'm interested but I want to think about it.
-          Please contact me in one week to see if I have questions.
+          <span>maybe!</span> I'm interested and would like to learn more.
+          Please send me more information and contact me in 1 week to see if I
+          have questions.
         </label>
       </div>
-      <div class="form-check">
-        <input
-          class="form-check-input"
-          type="radio"
-          name="privateLenderOptions"
-          id="privateLenderOptionsNo"
-          value="no"
-          ngModel
-          name="private-lender-option-no"
-        />
-        <label class="form-check-label" for="privateLenderOptionsNo">
-          <span>no!</span> I'm just not ready to be a private lender at this
-          time.
-        </label>
-      </div>
-    </div>
+    </div> -->
 
     <div class="form-group row">
       <h5>I would like more information about using lender funds from:</h5>
@@ -345,7 +416,7 @@
       minus.
     </p>
 
-    <button type="submit" class="btn btn-primary">
+    <button type="submit" class="btn btn-primary" [disabled]="!f.valid">
       Submit
     </button>
   </form>
