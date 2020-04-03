@@ -1,5 +1,6 @@
 import { Component, OnInit } from "@angular/core";
 import { NgForm } from "@angular/forms";
+import { User } from "../../shared/user.model";
 
 @Component({
   selector: "app-l1-information",
@@ -13,7 +14,34 @@ export class L1InformationComponent implements OnInit {
   constructor() {}
 
   onSubmit(form: NgForm) {
-    console.log(form);
+    const value = form.value;
+    const userContactInformation = value.userContactInformation;
+    const userContactMethod = value.userContactMethod;
+    const lenderFunds = value.lenderFunds;
+
+    const user = new User(
+      userContactInformation.name,
+      userContactInformation.email,
+      value.newsletter,
+      userContactMethod.contactMethodEmail,
+      userContactMethod.contactMethodText,
+      userContactMethod.contactMethodEvening,
+      userContactMethod.contactMethodEvening,
+      lenderFunds.certificateOfDeposit,
+      lenderFunds.pension,
+      lenderFunds.wholeLifeInsurance,
+      lenderFunds.homeEquityLineOfCredit
+    );
+
+    if (user.newsletter) {
+      console.log(
+        `Thank you for submitting the form ${user.name}. You have chosen to receive a newsletter. Thank you.`
+      );
+    } else {
+      console.log(
+        `Thank you for submitting the form ${user.name}. You have chosen not to receive a newsletter. Thank you for your interest.`
+      );
+    }
   }
 
   ngOnInit() {

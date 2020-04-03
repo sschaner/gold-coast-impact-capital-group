@@ -16,7 +16,7 @@
             type="text"
             class="form-control"
             ngModel
-            name="contact-name"
+            name="name"
             required
             #contactName="ngModel"
           />
@@ -40,7 +40,7 @@
             type="text"
             class="form-control"
             ngModel
-            name="contact-address"
+            name="address"
             required
             #contactAddress="ngModel"
           />
@@ -62,7 +62,7 @@
             type="text"
             class="form-control"
             ngModel
-            name="contact-city"
+            name="city"
             required
             #contactCity="ngModel"
           />
@@ -84,7 +84,7 @@
             type="text"
             class="form-control"
             ngModel
-            name="contact-state"
+            name="state"
             maxlength="2"
             required
             #contactState="ngModel"
@@ -112,7 +112,7 @@
             pattern="\d*"
             class="form-control"
             ngModel
-            name="contact-zip"
+            name="zip"
             maxlength="5"
             required
             #contactZip="ngModel"
@@ -135,7 +135,7 @@
             type="text"
             class="form-control"
             ngModel
-            name="contact-email"
+            name="email"
             required
             email
             #contactEmail="ngModel"
@@ -176,7 +176,7 @@
           ngModel
           ngModelGroup="userContactMethod"
           #contactMethodEmail="ngModel"
-          name="contact-method-email"
+          name="contactMethodEmail"
         />
         <label class="form-check-label" for="emailContact">
           Email
@@ -190,7 +190,7 @@
           ngModel
           ngModelGroup="userContactMethod"
           #contactMethodText="ngModel"
-          name="contact-method-text"
+          name="contactMethodText"
         />
         <label class="form-check-label" for="textContact">
           Text
@@ -204,7 +204,7 @@
           ngModel
           ngModelGroup="userContactMethod"
           #contactMethodDay="ngModel"
-          name="contact-method-day"
+          name="contactMethodDay"
         />
         <label class="form-check-label" for="callDay">
           Call in the day
@@ -218,7 +218,7 @@
           ngModel
           ngModelGroup="userContactMethod"
           #contactMethodEvening="ngModel"
-          name="contact-method-evening"
+          name="contactMethodEvening"
         />
         <label class="form-check-label" for="callEvening">
           Call in the evening
@@ -248,7 +248,7 @@
           ngModel
           required
           #contactCell="ngModel"
-          name="contact-cell"
+          name="contactCell"
           ngModelGroup="userContactInformation"
         />
         <span
@@ -271,7 +271,7 @@
           ngModel
           required
           #contactDay="ngModel"
-          name="contact-day"
+          name="contactDay"
           ngModelGroup="userContactInformation"
         />
         <span
@@ -296,7 +296,7 @@
           ngModel
           required
           #contactEvening="ngModel"
-          name="contact-evening"
+          name="contactEvening"
           ngModelGroup="userContactInformation"
         />
         <span
@@ -371,7 +371,7 @@
           id="certificateOfDeposit"
           ngModel
           ngModelGroup="lenderFunds"
-          name="cd"
+          name="certificateOfDeposit"
         />
         <label class="form-check-label" for="certificateOfDeposit">
           Bank Certificate of Deposite
@@ -397,7 +397,7 @@
           id="wholeLifeInsurance"
           ngModel
           ngModelGroup="lenderFunds"
-          name="whole-life-insurance"
+          name="wholeLifeInsurance"
         />
         <label class="form-check-label" for="wholeLifeInsurance">
           Whole Life Insurance Policy
@@ -410,7 +410,7 @@
           id="homeEquityLineOfCredit"
           ngModel
           ngModelGroup="lenderFunds"
-          name="home-equity-line-of-credit"
+          name="homeEquityLineOfCredit"
         />
         <label class="form-check-label" for="homeEquityLineOfCredit">
           Home Equity Line of Credit
