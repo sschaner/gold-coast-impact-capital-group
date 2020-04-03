@@ -14,6 +14,7 @@ export class L1InformationComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     console.log(form);
+    form.reset();
   }
 
   ngOnInit() {

@@ -5,144 +5,147 @@
       Please fill out the form below to let Gold Coast Imact Capital Group
       better understand how they can help you in the future.
     </p>
-
-    <div class="form-group row">
-      <label for="contact-name" class="col-3 col-md-1 col-form-label"
-        >Name:</label
-      >
-      <div class="col-9 col-md-11">
-        <input
-          id="contact-name"
-          type="text"
-          class="form-control"
-          ngModel
-          name="contact-name"
-          required
-          #contactName="ngModel"
-        />
-        <span
-          class="form-text error-message"
-          *ngIf="!contactName.valid && contactName.touched"
-          >Please enter your name.</span
+    <div ngModelGroup="userContactInformation">
+      <div class="form-group row">
+        <label for="contact-name" class="col-3 col-md-1 col-form-label"
+          >Name:</label
         >
+        <div class="col-9 col-md-11">
+          <input
+            id="contact-name"
+            type="text"
+            class="form-control"
+            ngModel
+            name="contact-name"
+            required
+            #contactName="ngModel"
+          />
+          <span
+            class="form-text error-message"
+            *ngIf="!contactName.valid && contactName.touched"
+            >Please enter your name.</span
+          >
+        </div>
       </div>
-    </div>
 
-    <div class="form-group row">
-      <label
-        for="contact-address"
-        class="col-3 col-md-2 col-lg-1 col-form-label"
-        >Address:</label
-      >
-      <div class="col-9 col-md-10 col-lg-11">
-        <input
-          id="contact-address"
-          type="text"
-          class="form-control"
-          ngModel
-          name="contact-address"
-          required
-          #contactAddress="ngModel"
-        />
-        <span
-          class="form-text error-message"
-          *ngIf="!contactAddress.valid && contactAddress.touched"
-          >Please enter your address.</span
+      <div class="form-group row">
+        <label
+          for="contact-address"
+          class="col-3 col-md-2 col-lg-1 col-form-label"
+          >Address:</label
         >
+        <div class="col-9 col-md-10 col-lg-11">
+          <input
+            id="contact-address"
+            type="text"
+            class="form-control"
+            ngModel
+            name="contact-address"
+            required
+            #contactAddress="ngModel"
+          />
+          <span
+            class="form-text error-message"
+            *ngIf="!contactAddress.valid && contactAddress.touched"
+            >Please enter your address.</span
+          >
+        </div>
       </div>
-    </div>
 
-    <div class="form-group row">
-      <label for="contact-city" class="col-2 col-md-1 col-form-label"
-        >City:</label
-      >
-      <div class="col-10 col-md-11">
-        <input
-          id="contact-city"
-          type="text"
-          class="form-control"
-          ngModel
-          name="contact-city"
-          required
-          #contactCity="ngModel"
-        />
-        <span
-          class="form-text error-message"
-          *ngIf="!contactCity.valid && contactCity.touched"
-          >Please enter your city.</span
+      <div class="form-group row">
+        <label for="contact-city" class="col-2 col-md-1 col-form-label"
+          >City:</label
         >
+        <div class="col-10 col-md-11">
+          <input
+            id="contact-city"
+            type="text"
+            class="form-control"
+            ngModel
+            name="contact-city"
+            required
+            #contactCity="ngModel"
+          />
+          <span
+            class="form-text error-message"
+            *ngIf="!contactCity.valid && contactCity.touched"
+            >Please enter your city.</span
+          >
+        </div>
       </div>
-    </div>
 
-    <div class="form-group row">
-      <label for="contact-state" class="col-2 col-md-1 col-form-label"
-        >State:</label
-      >
-      <div class="col-2 col-md-3">
-        <input
-          id="contact-state"
-          type="text"
-          class="form-control"
-          ngModel
-          name="contact-state"
-          maxlength="2"
-          required
-          #contactState="ngModel"
-        />
-        <span
-          class="form-text error-message"
-          *ngIf="!contactState.valid && contactState.touched && mobile"
-          >State?</span
+      <div class="form-group row">
+        <label for="contact-state" class="col-2 col-md-1 col-form-label"
+          >State:</label
         >
-        <span
-          class="form-text error-message"
-          *ngIf="!contactState.valid && contactState.touched && !mobile"
-          >Please enter a state.</span
+        <div class="col-2 col-md-3">
+          <input
+            id="contact-state"
+            type="text"
+            class="form-control"
+            ngModel
+            name="contact-state"
+            maxlength="2"
+            required
+            #contactState="ngModel"
+          />
+          <span
+            class="form-text error-message"
+            *ngIf="!contactState.valid && contactState.touched && mobile"
+            >State?</span
+          >
+          <span
+            class="form-text error-message"
+            *ngIf="!contactState.valid && contactState.touched && !mobile"
+            >Please enter a state.</span
+          >
+        </div>
+        <label
+          for="contact-zip"
+          class="col-2 col-md-1 col-form-label text-center"
+          >Zip:</label
         >
+        <div class="col-6 col-md-7">
+          <input
+            id="contact-zip"
+            type="text"
+            pattern="\d*"
+            class="form-control"
+            ngModel
+            name="contact-zip"
+            maxlength="5"
+            required
+            #contactZip="ngModel"
+          />
+          <span
+            class="form-text error-message"
+            *ngIf="!contactZip.valid && contactZip.touched"
+            >Please enter a zip code.</span
+          >
+        </div>
       </div>
-      <label for="contact-zip" class="col-2 col-md-1 col-form-label text-center"
-        >Zip:</label
-      >
-      <div class="col-6 col-md-7">
-        <input
-          id="contact-zip"
-          type="text"
-          pattern="\d*"
-          class="form-control"
-          ngModel
-          name="contact-zip"
-          maxlength="5"
-          required
-          #contactZip="ngModel"
-        />
-        <span
-          class="form-text error-message"
-          *ngIf="!contactZip.valid && contactZip.touched"
-          >Please enter a zip code.</span
-        >
-      </div>
-    </div>
 
-    <div class="form-group row">
-      <label for="contact-email" class="col-2 col-md-1 col-form-label"
-        >Email:</label
-      >
-      <div class="col-10 col-md-11">
-        <input
-          id="contact-email"
-          type="text"
-          class="form-control"
-          ngModel
-          name="contact-email"
-          required
-          email
-          #contactEmail="ngModel"
-        />
-        <span
-          class="form-text error-message"
-          *ngIf="!contactEmail.valid && contactEmail.touched"
-          >Please enter a valid email.</span
+      <div class="form-group row">
+        <label for="contact-email" class="col-2 col-md-1 col-form-label"
+          >Email:</label
         >
+        <div class="col-10 col-md-11">
+          <input
+            id="contact-email"
+            type="text"
+            class="form-control"
+            ngModel
+            name="contact-email"
+            required
+            email
+            #contactEmail="ngModel"
+          />
+          <span
+            class="form-text error-message"
+            *ngIf="!contactEmail.valid && contactEmail.touched"
+            >Please enter a valid email.</span
+          >
+        </div>
       </div>
     </div>
 
@@ -171,6 +174,7 @@
           type="checkbox"
           id="emailContact"
           ngModel
+          ngModelGroup="userContactMethod"
           #contactMethodEmail="ngModel"
           name="contact-method-email"
         />
@@ -184,6 +188,7 @@
           type="checkbox"
           id="textContact"
           ngModel
+          ngModelGroup="userContactMethod"
           #contactMethodText="ngModel"
           name="contact-method-text"
         />
@@ -197,6 +202,7 @@
           type="checkbox"
           id="callDay"
           ngModel
+          ngModelGroup="userContactMethod"
           #contactMethodDay="ngModel"
           name="contact-method-day"
         />
@@ -210,6 +216,7 @@
           type="checkbox"
           id="callEvening"
           ngModel
+          ngModelGroup="userContactMethod"
           #contactMethodEvening="ngModel"
           name="contact-method-evening"
         />
@@ -242,6 +249,7 @@
           required
           #contactCell="ngModel"
           name="contact-cell"
+          ngModelGroup="userContactInformation"
         />
         <span
           class="form-text error-message"
@@ -264,6 +272,7 @@
           required
           #contactDay="ngModel"
           name="contact-day"
+          ngModelGroup="userContactInformation"
         />
         <span
           class="form-text error-message"
@@ -288,6 +297,7 @@
           required
           #contactEvening="ngModel"
           name="contact-evening"
+          ngModelGroup="userContactInformation"
         />
         <span
           class="form-text error-message"
@@ -360,7 +370,8 @@
           type="checkbox"
           id="certificateOfDeposit"
           ngModel
-          name="certificate-of-deposit"
+          ngModelGroup="lenderFunds"
+          name="cd"
         />
         <label class="form-check-label" for="certificateOfDeposit">
           Bank Certificate of Deposite
@@ -372,6 +383,7 @@
           type="checkbox"
           id="pensionPlan"
           ngModel
+          ngModelGroup="lenderFunds"
           name="pension"
         />
         <label class="form-check-label" for="pensionPlan">
@@ -384,6 +396,7 @@
           type="checkbox"
           id="wholeLifeInsurance"
           ngModel
+          ngModelGroup="lenderFunds"
           name="whole-life-insurance"
         />
         <label class="form-check-label" for="wholeLifeInsurance">
@@ -396,6 +409,7 @@
           type="checkbox"
           id="homeEquityLineOfCredit"
           ngModel
+          ngModelGroup="lenderFunds"
           name="home-equity-line-of-credit"
         />
         <label class="form-check-label" for="homeEquityLineOfCredit">
