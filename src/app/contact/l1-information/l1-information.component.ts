@@ -5,11 +5,21 @@ import { User } from "../../shared/user.model";
 @Component({
   selector: "app-l1-information",
   templateUrl: "./l1-information.component.html",
-  styleUrls: ["./l1-information.component.scss"]
+  styleUrls: ["./l1-information.component.scss"],
 })
 export class L1InformationComponent implements OnInit {
-  returnClass = true;
+  // returnClass = true;
   mobile = false;
+  submitted = false;
+  user = {
+    name: "",
+    email: "",
+    newsletter: "",
+    certificateOfDeposit: "",
+    pension: "",
+    wholeLifeInsurance: "",
+    homeEquityLineOfCredit: "",
+  };
 
   constructor() {}
 
@@ -19,29 +29,30 @@ export class L1InformationComponent implements OnInit {
     const userContactMethod = value.userContactMethod;
     const lenderFunds = value.lenderFunds;
 
-    const user = new User(
-      userContactInformation.name,
-      userContactInformation.email,
-      value.newsletter,
-      userContactMethod.contactMethodEmail,
-      userContactMethod.contactMethodText,
-      userContactMethod.contactMethodEvening,
-      userContactMethod.contactMethodEvening,
-      lenderFunds.certificateOfDeposit,
-      lenderFunds.pension,
-      lenderFunds.wholeLifeInsurance,
-      lenderFunds.homeEquityLineOfCredit
-    );
+    this.user.name = userContactInformation.name;
+    this.user.email = userContactInformation.email;
+    this.user.newsletter = value.newsletter;
+    this.user.certificateOfDeposit = lenderFunds.certificateOfDeposit;
+    this.user.pension = lenderFunds.pension;
+    this.user.wholeLifeInsurance = lenderFunds.wholeLifeInsurance;
+    this.user.homeEquityLineOfCredit = lenderFunds.homeEquityLineOfCredit;
 
-    if (user.newsletter) {
-      console.log(
-        `Thank you for submitting the form ${user.name}. You have chosen to receive a newsletter. Thank you.`
-      );
-    } else {
-      console.log(
-        `Thank you for submitting the form ${user.name}. You have chosen not to receive a newsletter. Thank you for your interest.`
-      );
-    }
+    // const user = new User(
+    //   userContactInformation.name,
+    //   userContactInformation.email,
+    //   value.newsletter,
+    //   userContactMethod.contactMethodEmail,
+    //   userContactMethod.contactMethodText,
+    //   userContactMethod.contactMethodDay,
+    //   userContactMethod.contactMethodEvening,
+    //   lenderFunds.certificateOfDeposit,
+    //   lenderFunds.pension,
+    //   lenderFunds.wholeLifeInsurance,
+    //   lenderFunds.homeEquityLineOfCredit
+    // );
+
+    form.reset();
+    this.submitted = true;
   }
 
   ngOnInit() {

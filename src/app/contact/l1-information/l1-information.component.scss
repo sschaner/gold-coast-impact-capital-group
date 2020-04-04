@@ -80,12 +80,6 @@ h5 {
   font-weight: $primary-font-weight;
 }
 
-span {
-  color: $secondary-color;
-  font-weight: $primary-font-weight;
-  text-transform: uppercase;
-}
-
 .disclaimer-header {
   display: flex;
   justify-content: space-between;
@@ -108,4 +102,12 @@ span {
 button {
   display: block;
   margin: 1em auto;
+}
+
+.form-confirmation {
+  width: 100%;
+}
+
+li {
+  margin-left: 20px;
 }

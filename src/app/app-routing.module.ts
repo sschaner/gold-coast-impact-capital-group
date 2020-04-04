@@ -17,13 +17,13 @@ const appRoutes: Routes = [
     component: ContactComponent,
     children: [
       { path: "", component: ContactInformationComponent },
-      { path: "l1form", component: L1InformationComponent }
-    ]
-  }
+      { path: "l1form", component: L1InformationComponent },
+    ],
+  },
 ];
 
 @NgModule({
   imports: [RouterModule.forRoot(appRoutes)],
-  exports: [RouterModule]
+  exports: [RouterModule],
 })
 export class AppRoutingModule {}

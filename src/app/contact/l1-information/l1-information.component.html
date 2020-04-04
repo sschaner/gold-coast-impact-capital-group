@@ -1,6 +1,11 @@
 <div class="row">
-  <h2 class="title-page">information form</h2>
-  <form ngNativeValidate (ngSubmit)="onSubmit(f)" #f="ngForm">
+  <form
+    *ngIf="!submitted"
+    ngNativeValidate
+    (ngSubmit)="onSubmit(f)"
+    #f="ngForm"
+  >
+    <h2 class="title-page">information form</h2>
     <p>
       Please fill out the form below to let Gold Coast Imact Capital Group
       better understand how they can help you in the future.
@@ -374,7 +379,7 @@
           name="certificateOfDeposit"
         />
         <label class="form-check-label" for="certificateOfDeposit">
-          Bank Certificate of Deposite
+          Bank Certificate of Deposit
         </label>
       </div>
       <div class="form-check">
@@ -434,4 +439,29 @@
       Submit
     </button>
   </form>
+  <div *ngIf="submitted" class="form-confirmation">
+    <h2 class="title-page">thank you</h2>
+    <p>
+      Thank you for submitting the form {{ user.name }}. We will be reaching out
+      to you shortly at {{ user.email }} with more information.
+      <span *ngIf="user.newsletter"
+        >You have requested to receive a quarterly newsletter from us. Thank
+        you.</span
+      >
+    </p>
+    <ul
+      *ngIf="
+        user.certificateOfDeposit ||
+        user.pension ||
+        user.wholeLifeInsurance ||
+        user.homeEquityLineOfCredit
+      "
+    >
+      You have requested more information about using lender funds from:
+      <li *ngIf="user.certificateOfDeposit">Bank certificate of deposit</li>
+      <li *ngIf="user.pension">IRA and 401K pension plans</li>
+      <li *ngIf="user.wholeLifeInsurance">Whole life insurance policy</li>
+      <li *ngIf="user.homeEquityLineOfCredit">Home equity line of credit</li>
+    </ul>
+  </div>
 </div>

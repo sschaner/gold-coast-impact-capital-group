@@ -22,10 +22,10 @@ import { ContactInformationComponent } from "./contact/contact-information/conta
     AboutComponent,
     ContactComponent,
     L1InformationComponent,
-    ContactInformationComponent
+    ContactInformationComponent,
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
 export class AppModule {}

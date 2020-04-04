@@ -47,4 +47,9 @@ ul {
   background-color: $primary-color;
   color: $secondary-color;
   border-color: $primary-color;
+
+  &:disabled {
+    background-color: $secondary-color;
+    border-color: $secondary-color;
+  }
 }
