@@ -442,26 +442,28 @@
   <div *ngIf="submitted" class="form-confirmation">
     <h2 class="title-page">thank you</h2>
     <p>
-      Thank you for submitting the form {{ user.name }}. We will be reaching out
-      to you shortly at {{ user.email }} with more information.
-      <span *ngIf="user.newsletter"
+      Thank you for submitting the form {{ tempUser.name }}. We will be reaching
+      out to you shortly at {{ tempUser.email }} with more information.
+      <span *ngIf="tempUser.newsletter"
         >You have requested to receive a quarterly newsletter from us. Thank
         you.</span
       >
     </p>
     <ul
       *ngIf="
-        user.certificateOfDeposit ||
-        user.pension ||
-        user.wholeLifeInsurance ||
-        user.homeEquityLineOfCredit
+        tempUser.certificateOfDeposit ||
+        tempUser.pension ||
+        tempUser.wholeLifeInsurance ||
+        tempUser.homeEquityLineOfCredit
       "
     >
       You have requested more information about using lender funds from:
-      <li *ngIf="user.certificateOfDeposit">Bank certificate of deposit</li>
-      <li *ngIf="user.pension">IRA and 401K pension plans</li>
-      <li *ngIf="user.wholeLifeInsurance">Whole life insurance policy</li>
-      <li *ngIf="user.homeEquityLineOfCredit">Home equity line of credit</li>
+      <li *ngIf="tempUser.certificateOfDeposit">Bank certificate of deposit</li>
+      <li *ngIf="tempUser.pension">IRA and 401K pension plans</li>
+      <li *ngIf="tempUser.wholeLifeInsurance">Whole life insurance policy</li>
+      <li *ngIf="tempUser.homeEquityLineOfCredit">
+        Home equity line of credit
+      </li>
     </ul>
   </div>
 </div>
