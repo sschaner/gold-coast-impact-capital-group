@@ -12,6 +12,7 @@ import { ContactComponent } from "./contact/contact.component";
 import { L1InformationComponent } from "./contact/l1-information/l1-information.component";
 import { HomeComponent } from "./home/home.component";
 import { ContactInformationComponent } from "./contact/contact-information/contact-information.component";
+import { UsersComponent } from './users/users.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { ContactInformationComponent } from "./contact/contact-information/conta
     ContactComponent,
     L1InformationComponent,
     ContactInformationComponent,
+    UsersComponent,
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
   providers: [],

@@ -7,6 +7,7 @@ import { AboutComponent } from "./about/about.component";
 import { ContactComponent } from "./contact/contact.component";
 import { L1InformationComponent } from "./contact/l1-information/l1-information.component";
 import { ContactInformationComponent } from "./contact/contact-information/contact-information.component";
+import { UsersComponent } from "./users/users.component";
 
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
@@ -20,6 +21,7 @@ const appRoutes: Routes = [
       { path: "l1form", component: L1InformationComponent },
     ],
   },
+  { path: "users", component: UsersComponent },
 ];
 
 @NgModule({
