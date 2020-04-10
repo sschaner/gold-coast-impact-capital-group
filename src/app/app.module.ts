@@ -12,7 +12,8 @@ import { ContactComponent } from "./contact/contact.component";
 import { L1InformationComponent } from "./contact/l1-information/l1-information.component";
 import { HomeComponent } from "./home/home.component";
 import { ContactInformationComponent } from "./contact/contact-information/contact-information.component";
-import { UsersComponent } from './users/users.component';
+import { UsersComponent } from "./users/users.component";
+import { UserService } from "./contact/l1-information/user.service";
 
 @NgModule({
   declarations: [
@@ -27,7 +28,7 @@ import { UsersComponent } from './users/users.component';
     UsersComponent,
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
-  providers: [],
+  providers: [UserService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

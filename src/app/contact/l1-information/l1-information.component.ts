@@ -1,6 +1,8 @@
 import { Component, OnInit } from "@angular/core";
 import { NgForm } from "@angular/forms";
-import { User } from "../../shared/user.model";
+
+import { UserService } from "./user.service";
+import { DataStorageService } from "src/app/shared/data-storage.service";
 
 @Component({
   selector: "app-l1-information",
@@ -8,10 +10,9 @@ import { User } from "../../shared/user.model";
   styleUrls: ["./l1-information.component.scss"],
 })
 export class L1InformationComponent implements OnInit {
-  // returnClass = true;
   mobile = false;
   submitted = false;
-  user = {
+  tempUser = {
     name: "",
     email: "",
     newsletter: "",
@@ -21,7 +22,19 @@ export class L1InformationComponent implements OnInit {
     homeEquityLineOfCredit: "",
   };
 
-  constructor() {}
+  constructor(
+    private dataStorageService: DataStorageService,
+    private userService: UserService
+  ) {}
+
+  ngOnInit() {
+    this.dataStorageService.fetchUsers();
+    if (window.screen.width <= 375) {
+      this.mobile = true;
+    } else {
+      this.mobile = false;
+    }
+  }
 
   onSubmit(form: NgForm) {
     const value = form.value;
@@ -29,38 +42,18 @@ export class L1InformationComponent implements OnInit {
     const userContactMethod = value.userContactMethod;
     const lenderFunds = value.lenderFunds;
 
-    this.user.name = userContactInformation.name;
-    this.user.email = userContactInformation.email;
-    this.user.newsletter = value.newsletter;
-    this.user.certificateOfDeposit = lenderFunds.certificateOfDeposit;
-    this.user.pension = lenderFunds.pension;
-    this.user.wholeLifeInsurance = lenderFunds.wholeLifeInsurance;
-    this.user.homeEquityLineOfCredit = lenderFunds.homeEquityLineOfCredit;
+    this.tempUser.name = userContactInformation.name;
+    this.tempUser.email = userContactInformation.email;
+    this.tempUser.newsletter = value.newsletter;
+    this.tempUser.certificateOfDeposit = lenderFunds.certificateOfDeposit;
+    this.tempUser.pension = lenderFunds.pension;
+    this.tempUser.wholeLifeInsurance = lenderFunds.wholeLifeInsurance;
+    this.tempUser.homeEquityLineOfCredit = lenderFunds.homeEquityLineOfCredit;
 
-    // const user = new User(
-    //   userContactInformation.name,
-    //   userContactInformation.email,
-    //   value.newsletter,
-    //   userContactMethod.contactMethodEmail,
-    //   userContactMethod.contactMethodText,
-    //   userContactMethod.contactMethodDay,
-    //   userContactMethod.contactMethodEvening,
-    //   lenderFunds.certificateOfDeposit,
-    //   lenderFunds.pension,
-    //   lenderFunds.wholeLifeInsurance,
-    //   lenderFunds.homeEquityLineOfCredit
-    // );
-
+    this.userService.addUser(value);
+    this.dataStorageService.storeUsers();
     form.reset();
     this.submitted = true;
-  }
-
-  ngOnInit() {
-    if (window.screen.width <= 375) {
-      this.mobile = true;
-    } else {
-      this.mobile = false;
-    }
   }
 
   ngAfterViewInit() {
