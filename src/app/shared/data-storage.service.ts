@@ -24,6 +24,7 @@ export class DataStorageService {
       )
       .subscribe((users) => {
         this.userService.setUsers(users);
+        console.log(users);
       });
   }
 }
