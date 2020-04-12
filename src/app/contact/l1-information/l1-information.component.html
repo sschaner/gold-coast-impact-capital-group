@@ -12,23 +12,45 @@
     </p>
     <div ngModelGroup="userContactInformation">
       <div class="form-group row">
-        <label for="contact-name" class="col-3 col-md-1 col-form-label"
-          >Name:</label
+        <label for="contact-first-name" class="col-4 col-md-2 col-form-label"
+          >First Name:</label
         >
-        <div class="col-9 col-md-11">
+        <div class="col-8 col-md-10">
           <input
-            id="contact-name"
+            id="contact-first-name"
             type="text"
             class="form-control"
             ngModel
-            name="name"
+            name="firstName"
             required
-            #contactName="ngModel"
+            #contactFirstName="ngModel"
           />
           <span
             class="form-text error-message"
-            *ngIf="!contactName.valid && contactName.touched"
-            >Please enter your name.</span
+            *ngIf="!contactFirstName.valid && contactFirstName.touched"
+            >Please enter your first name.</span
+          >
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <label for="contact-last-name" class="col-4 col-md-2 col-form-label"
+          >Last Name:</label
+        >
+        <div class="col-8 col-md-10">
+          <input
+            id="contact-last-name"
+            type="text"
+            class="form-control"
+            ngModel
+            name="lastName"
+            required
+            #contactLastName="ngModel"
+          />
+          <span
+            class="form-text error-message"
+            *ngIf="!contactLastName.valid && contactLastName.touched"
+            >Please enter your last name.</span
           >
         </div>
       </div>
@@ -317,56 +339,6 @@
       your information or continuously contact you.
     </p>
 
-    <!-- <div class="form-group row">
-        <h5>Private Lender Options</h5>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="privateLenderOptions"
-            id="privateLenderOptionsYes"
-            value="yes"
-            ngModel
-            name="private-lender-option-yes"
-          />
-          <label class="form-check-label" for="privateLenderOptionsYes">
-            <span>yes!</span> I would like to join the Impact team as a private
-            lender. Please contact me to get the process started.
-          </label>
-        </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="privateLenderOptions"
-            id="privateLenderOptionsMaybe1"
-            value="maybe1"
-            ngModel
-            name="private-lender-option-maybe-1"
-          />
-          <label class="form-check-label" for="privateLenderOptionsMaybe1">
-            <span>maybe!</span> I'm very interested but I have some questions I'd
-            like to discuss one-on-one. Please contact me to schedule a meeting.
-          </label>
-        </div>
-        <div class="form-check">
-          <input
-            class="form-check-input"
-            type="radio"
-            name="privateLenderOptions"
-            id="privateLenderOptionsMaybe2"
-            value="maybe2"
-            ngModel
-            name="private-lender-option-maybe-2"
-          />
-          <label class="form-check-label" for="privateLenderOptionsMaybe2">
-            <span>maybe!</span> I'm interested and would like to learn more.
-            Please send me more information and contact me in 1 week to see if I
-            have questions.
-          </label>
-        </div>
-      </div> -->
-
     <div class="form-group row">
       <h5>I would like more information about using lender funds from:</h5>
       <div class="form-check">
@@ -442,8 +414,9 @@
   <div *ngIf="submitted" class="form-confirmation">
     <h2 class="title-page">thank you</h2>
     <p>
-      Thank you for submitting the form {{ tempUser.name }}. We will be reaching
-      out to you shortly at {{ tempUser.email }} with more information.
+      Thank you for submitting the form {{ tempUser.firstName }}
+      {{ tempUser.lastName }}. We will be reaching out to you shortly at
+      {{ tempUser.email }} with more information.
       <span *ngIf="tempUser.newsletter"
         >You have requested to receive a quarterly newsletter from us. Thank
         you.</span

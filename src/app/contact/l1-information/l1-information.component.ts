@@ -13,7 +13,8 @@ export class L1InformationComponent implements OnInit {
   mobile = false;
   submitted = false;
   tempUser = {
-    name: "",
+    firstName: "",
+    lastName: "",
     email: "",
     newsletter: "",
     certificateOfDeposit: "",
@@ -42,7 +43,8 @@ export class L1InformationComponent implements OnInit {
     const userContactMethod = value.userContactMethod;
     const lenderFunds = value.lenderFunds;
 
-    this.tempUser.name = userContactInformation.name;
+    this.tempUser.firstName = userContactInformation.firstName;
+    this.tempUser.lastName = userContactInformation.lastName;
     this.tempUser.email = userContactInformation.email;
     this.tempUser.newsletter = value.newsletter;
     this.tempUser.certificateOfDeposit = lenderFunds.certificateOfDeposit;

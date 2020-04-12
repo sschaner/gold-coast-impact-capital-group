@@ -1,5 +1,6 @@
 export class User {
-  public name: string;
+  public firstName: string;
+  public lastName: string;
   public address: string;
   public city: string;
   public state: string;
@@ -18,7 +19,8 @@ export class User {
   public wholeLifeInsurance: boolean;
   public homeEquityLineOfCredit: boolean;
   constructor(
-    name: string,
+    firstName: string,
+    lastName: string,
     address: string,
     city: string,
     state: string,
@@ -38,7 +40,8 @@ export class User {
     homeEquityLineOfCredit: boolean
   ) {
     userContactInformation: {
-      this.name = name;
+      this.firstName = firstName;
+      this.lastName = lastName;
       this.address = address;
       this.city = city;
       this.state = state;
