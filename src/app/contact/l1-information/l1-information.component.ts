@@ -29,7 +29,7 @@ export class L1InformationComponent implements OnInit {
   ) {}
 
   ngOnInit() {
-    this.dataStorageService.fetchUsers();
+    this.dataStorageService.fetchUsers().subscribe();
     if (window.screen.width <= 375) {
       this.mobile = true;
     } else {

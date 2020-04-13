@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { tap } from "rxjs/operators";
 
 import { User } from "../contact/l1-information/user.model";
 import { UserService } from "../contact/l1-information/user.service";
@@ -18,13 +19,15 @@ export class DataStorageService {
   }
 
   fetchUsers() {
-    this.http
+    return this.http
       .get<User[]>(
         "https://gold-coast-impact-capital.firebaseio.com/users.json"
       )
-      .subscribe((users) => {
-        this.userService.setUsers(users);
-        console.log(users);
-      });
+      .pipe(
+        tap((users) => {
+          this.userService.setUsers(users);
+          console.log(users);
+        })
+      );
   }
 }

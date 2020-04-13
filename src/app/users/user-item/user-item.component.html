@@ -1,0 +1,20 @@
+<div class="pull-left">
+  <p class="list-group-item-text">
+    {{ user.userContactInformation.firstName }}
+    {{ user.userContactInformation.lastName }}
+  </p>
+  <p class="list-group-item-text">{{ user.userContactInformation.address }}</p>
+  <p class="list-group-item-text">
+    {{ user.userContactInformation.city }}
+    {{ user.userContactInformation.state }},
+    {{ user.userContactInformation.zip }}
+  </p>
+</div>
+<div class="pull-right">
+  <p class="list-group-item-text">
+    Email: {{ user.userContactInformation.email }}
+  </p>
+  <p class="list-group-item-text">
+    Cell: {{ user.userContactInformation.contactCell }}
+  </p>
+</div>
