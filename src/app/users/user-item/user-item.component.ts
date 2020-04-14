@@ -10,7 +10,5 @@ export class UserItemComponent implements OnInit {
   @Input() user: User;
   @Input() index: number;
 
-  ngOnInit() {
-    console.log(this.user.newsletter);
-  }
+  ngOnInit() {}
 }
