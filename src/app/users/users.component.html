@@ -1,6 +1,6 @@
 <div class="row">
   <!-- <p>users works!</p> -->
-  <div class="col-12">
+  <div class="users-list">
     <app-user-item
       *ngFor="let userEl of users; let i = index"
       [user]="userEl"
@@ -8,6 +8,3 @@
     ></app-user-item>
   </div>
 </div>
-<button (click)="onFetchData()" class="btn btn-primary">
-  Fetch Data
-</button>

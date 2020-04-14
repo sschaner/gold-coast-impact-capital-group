@@ -25,19 +25,18 @@ export class UsersComponent implements OnInit, OnDestroy {
         this.users = users;
       }
     );
+    this.dataStorageService.fetchUsers().subscribe();
     this.users = this.usersService.getUsers();
   }
 
   ngAfterViewInit() {
     document.querySelector("body").classList.add("background-other");
-  }
-
-  onFetchData() {
-    this.dataStorageService.fetchUsers().subscribe();
+    document.querySelector(".container").classList.remove("container");
   }
 
   ngOnDestroy() {
     document.querySelector("body").classList.remove("background-other");
+    document.querySelector(".container").classList.add("container");
     this.subsription.unsubscribe();
   }
 }

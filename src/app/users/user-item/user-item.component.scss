@@ -1,0 +1,73 @@
+@import "src/scss/config";
+
+.user-grid {
+  display: grid;
+  grid-template-columns: 6.25rem 5.25rem 16.25rem 10.25rem 1.75rem 3.25rem 12.25rem 6rem 6rem 6rem 2.25rem 2.25rem 2.25rem 2.25rem 2.25rem 2.25rem 2.25rem 2.25rem 2.25rem;
+  grid-template-areas: "lastName firstName address city state zip email contactDay contactEvening contactCell contactMethodEmail contactMethodDay contactMethodEvening contactMethodText newsletter lenderFundsCertificateOfDeposit lenderFundsHomeEquityLineOfCredit lenderFundsPension lenderFundsWholeLifeInsurance";
+  //   border: 1px solid $primary-color;
+
+  & div {
+    border-right: 1px solid $primary-color;
+    // border-left: 1px solid $primary-color;
+    border-top: 1px solid $primary-color;
+    padding-left: 4px;
+  }
+
+  .last-name {
+    grid-area: lastName;
+  }
+  .first-name {
+    grid-area: firstName;
+  }
+  .address {
+    grid-area: address;
+  }
+  .city {
+    grid-area: city;
+  }
+  .state {
+    grid-area: state;
+  }
+  .zip {
+    grid-area: zip;
+  }
+  .email {
+    grid-area: email;
+  }
+  .contact-day {
+    grid-area: contactDay;
+  }
+  .contact-evening {
+    grid-area: contactEvening;
+  }
+  .contact-cell {
+    grid-area: contactCell;
+  }
+  .contact-method-email {
+    grid-area: contactMethodEmail;
+  }
+  .contact-method-day {
+    grid-area: contactMethodDay;
+  }
+  .contact-method-evening {
+    grid-area: contactMethodEvening;
+  }
+  .contact-method-text {
+    grid-area: contactMethodText;
+  }
+  .newsletter {
+    grid-area: newsletter;
+  }
+  .lender-funds-cd {
+    grid-area: lenderFundsCertificateOfDeposit;
+  }
+  .lender-funds-home-equity {
+    grid-area: lenderFundsHomeEquityLineOfCredit;
+  }
+  .lender-funds-pension {
+    grid-area: lenderFundsPension;
+  }
+  .lender-funds-life-insurance {
+    grid-area: lenderFundsWholeLifeInsurance;
+  }
+}

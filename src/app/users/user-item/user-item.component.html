@@ -1,20 +1,35 @@
-<div class="pull-left">
-  <p class="list-group-item-text">
-    {{ user.userContactInformation.firstName }}
-    {{ user.userContactInformation.lastName }}
-  </p>
-  <p class="list-group-item-text">{{ user.userContactInformation.address }}</p>
-  <p class="list-group-item-text">
-    {{ user.userContactInformation.city }}
-    {{ user.userContactInformation.state }},
-    {{ user.userContactInformation.zip }}
-  </p>
-</div>
-<div class="pull-right">
-  <p class="list-group-item-text">
-    Email: {{ user.userContactInformation.email }}
-  </p>
-  <p class="list-group-item-text">
-    Cell: {{ user.userContactInformation.contactCell }}
-  </p>
+<div class="user-grid">
+  <div class="last-name">{{ user.userContactInformation.lastName }}</div>
+  <div class="first-name">{{ user.userContactInformation.firstName }}</div>
+  <div class="address">{{ user.userContactInformation.address }}</div>
+  <div class="city">{{ user.userContactInformation.city }}</div>
+  <div class="state">{{ user.userContactInformation.state }}</div>
+  <div class="zip">{{ user.userContactInformation.zip }}</div>
+  <div class="email">{{ user.userContactInformation.email }}</div>
+  <div class="contact-day">{{ user.userContactInformation.contactDay }}</div>
+  <div class="contact-evening">
+    {{ user.userContactInformation.contactEvening }}
+  </div>
+  <div class="contact-cell">{{ user.userContactInformation.contactCell }}</div>
+  <div class="contact-method-email">
+    {{ user.userContactMethod.contactMethodEmail }}
+  </div>
+  <div class="contact-method-day">
+    {{ user.userContactMethod.contactMethodDay }}
+  </div>
+  <div class="contact-method-evning">
+    {{ user.userContactMethod.contactMethodEvening }}
+  </div>
+  <div class="contact-method-text">
+    {{ user.userContactMethod.contactMethodText }}
+  </div>
+  <div class="newsletter">{{ user.newsletter }}</div>
+  <div class="lender-funds-cd">{{ user.lenderFunds.certificateOfDeposit }}</div>
+  <div class="lender-funds-home-equity">
+    {{ user.lenderFunds.homeEquityLineOfCredit }}
+  </div>
+  <div class="lender-funds-pension">{{ user.lenderFunds.pension }}</div>
+  <div class="lender-funds-life-insurance">
+    {{ user.lenderFunds.wholeLifeInsurance }}
+  </div>
 </div>

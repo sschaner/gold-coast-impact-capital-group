@@ -1,0 +1,7 @@
+@import "src/scss/config";
+
+.users-list {
+  border-left: 1px solid $primary-color;
+  border-bottom: 1px solid $primary-color;
+  margin: 1rem auto;
+}
