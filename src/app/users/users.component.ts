@@ -36,7 +36,7 @@ export class UsersComponent implements OnInit, OnDestroy {
 
   ngOnDestroy() {
     document.querySelector("body").classList.remove("background-other");
-    document.querySelector(".container").classList.add("container");
+    // document.querySelector(".container").classList.add("container");
     this.subsription.unsubscribe();
   }
 }
