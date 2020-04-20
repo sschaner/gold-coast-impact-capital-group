@@ -32,6 +32,14 @@ ul {
   margin: 0 15px;
 }
 
+.error-message {
+  color: red;
+  text-transform: none;
+  font-weight: $secondary-font-weight;
+  font-size: 0.8em;
+  margin: 0;
+}
+
 .title-page {
   text-transform: uppercase;
   color: $primary-color;

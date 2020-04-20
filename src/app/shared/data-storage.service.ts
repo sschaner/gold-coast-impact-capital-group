@@ -26,7 +26,7 @@ export class DataStorageService {
       .pipe(
         tap((users) => {
           this.userService.setUsers(users);
-          console.log(users);
+          // console.log(users);
         })
       );
   }

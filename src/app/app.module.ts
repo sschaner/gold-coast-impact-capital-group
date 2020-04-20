@@ -14,7 +14,9 @@ import { HomeComponent } from "./home/home.component";
 import { ContactInformationComponent } from "./contact/contact-information/contact-information.component";
 import { UsersComponent } from "./users/users.component";
 import { UserService } from "./contact/l1-information/user.service";
-import { UserItemComponent } from './users/user-item/user-item.component';
+import { UserItemComponent } from "./users/user-item/user-item.component";
+import { AuthComponent } from "./auth/auth.component";
+import { LoadingSpinnerComponent } from "./shared/loading-spinner/loading-spinner.component";
 
 @NgModule({
   declarations: [
@@ -28,6 +30,8 @@ import { UserItemComponent } from './users/user-item/user-item.component';
     ContactInformationComponent,
     UsersComponent,
     UserItemComponent,
+    AuthComponent,
+    LoadingSpinnerComponent,
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
   providers: [UserService],

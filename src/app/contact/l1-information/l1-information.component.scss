@@ -22,14 +22,6 @@ input.ng-invalid.ng-touched {
   border: 1px solid red;
 }
 
-.error-message {
-  color: red;
-  text-transform: none;
-  font-weight: $secondary-font-weight;
-  font-size: 0.8em;
-  margin: 0;
-}
-
 .col {
   &-2,
   &-3,
