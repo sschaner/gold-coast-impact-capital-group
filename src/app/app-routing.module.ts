@@ -9,6 +9,7 @@ import { L1InformationComponent } from "./contact/l1-information/l1-information.
 import { ContactInformationComponent } from "./contact/contact-information/contact-information.component";
 import { UsersComponent } from "./users/users.component";
 import { AuthComponent } from "./auth/auth.component";
+import { AuthGuard } from "./auth/auth.guard";
 
 const appRoutes: Routes = [
   { path: "", component: HomeComponent },
@@ -22,7 +23,7 @@ const appRoutes: Routes = [
       { path: "l1form", component: L1InformationComponent },
     ],
   },
-  { path: "users", component: UsersComponent },
+  { path: "users", component: UsersComponent, canActivate: [AuthGuard] },
   { path: "auth", component: AuthComponent },
 ];
 

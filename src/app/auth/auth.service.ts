@@ -77,6 +77,7 @@ export class AuthService {
     if (!authUserData) {
       return;
     }
+
     const loadedAuthUser = new AuthUser(
       authUserData.email,
       authUserData.id,
@@ -86,9 +87,10 @@ export class AuthService {
 
     if (loadedAuthUser.token) {
       this.authUser.next(loadedAuthUser);
-      console.log(loadedAuthUser);
     } else {
-      console.log("not working!");
+      console.log("Doesn't work");
+      console.log(authUserData);
+      console.log(loadedAuthUser);
     }
   }
 
@@ -100,7 +102,7 @@ export class AuthService {
   private handleAuthentication(
     email: string,
     userId: string,
-    token,
+    token: string,
     expiresIn: number
   ) {
     const expirationDate = new Date(new Date().getTime() + expiresIn * 1000);
