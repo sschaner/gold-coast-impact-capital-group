@@ -5,6 +5,7 @@
 export const environment = {
   production: false,
   codeAnswer: "goldcoast",
+  firebaseWebAPIKey: "AIzaSyAfS7RD82PERmMZtDX2Iwhtwuov4v0SWOo",
 };
 
 /*
