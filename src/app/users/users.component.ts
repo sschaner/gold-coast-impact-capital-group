@@ -31,12 +31,12 @@ export class UsersComponent implements OnInit, OnDestroy {
 
   ngAfterViewInit() {
     document.querySelector("body").classList.add("background-other");
-    // document.querySelector(".container").classList.remove("container");
+    document.querySelector(".container").classList.remove("container");
   }
 
   ngOnDestroy() {
     document.querySelector("body").classList.remove("background-other");
-    // document.querySelector(".container").classList.add("container");
+    document.querySelector("div").classList.add("container");
     this.subsription.unsubscribe();
   }
 }
