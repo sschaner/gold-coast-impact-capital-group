@@ -1,0 +1,11 @@
+@import "src/scss/config";
+
+.card {
+  .information-video {
+    width: 100%;
+    border: 0;
+  }
+  .card-body {
+    background: rgba($color: $secondary-color, $alpha: 0.5);
+  }
+}

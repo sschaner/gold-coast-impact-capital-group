@@ -9,3 +9,10 @@
 <div class="row">
   <p>Take a look at our videos for more information.</p>
 </div>
+<div class="row information__videos">
+  <app-information-item
+    *ngFor="let videoEl of videos; let i = index"
+    [video]="videoEl"
+    [index]="i"
+  ></app-information-item>
+</div>

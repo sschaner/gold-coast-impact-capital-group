@@ -1,1 +1,9 @@
 @import "src/scss/config";
+
+.information__videos {
+  justify-content: space-evenly;
+}
+
+.card-body {
+  background: rgba($color: $secondary-color, $alpha: 0.5);
+}

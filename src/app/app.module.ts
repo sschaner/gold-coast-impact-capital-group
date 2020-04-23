@@ -17,6 +17,9 @@ import { UserService } from "./contact/l1-information/user.service";
 import { UserItemComponent } from "./users/user-item/user-item.component";
 import { AuthComponent } from "./auth/auth.component";
 import { LoadingSpinnerComponent } from "./shared/loading-spinner/loading-spinner.component";
+import { InformationService } from "./information/information.service";
+import { InformationItemComponent } from "./information/information-item/information-item.component";
+import { SafePipe } from "./information/information-item/safePipe";
 
 @NgModule({
   declarations: [
@@ -32,9 +35,11 @@ import { LoadingSpinnerComponent } from "./shared/loading-spinner/loading-spinne
     UserItemComponent,
     AuthComponent,
     LoadingSpinnerComponent,
+    InformationItemComponent,
+    SafePipe,
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
-  providers: [UserService],
+  providers: [UserService, InformationService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
