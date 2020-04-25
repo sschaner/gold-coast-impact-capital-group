@@ -4,6 +4,13 @@
   justify-content: space-evenly;
 }
 
-.card-body {
-  background: rgba($color: $secondary-color, $alpha: 0.5);
+.card {
+  width: 18rem;
+
+  .card-body {
+    .btn-video-submit {
+      margin-top: 1em;
+      font-size: 1em;
+    }
+  }
 }

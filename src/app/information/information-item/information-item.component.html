@@ -1,12 +1,12 @@
-<div class="card" style="width: 18rem;">
+<div class="card">
   <iframe
     class="information-video"
-    [src]="video.videoPath | safe"
+    [src]="video.videoURL | safe"
     allowfullscreen
   >
   </iframe>
   <div class="card-body">
-    <h5 class="card-title">{{ video.title }}</h5>
-    <p class="card-text">{{ video.description }}</p>
+    <h5 class="card-title">{{ video.videoTitle }}</h5>
+    <p class="card-text">{{ video.videoDescription }}</p>
   </div>
 </div>

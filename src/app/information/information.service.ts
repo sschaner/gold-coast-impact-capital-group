@@ -20,6 +20,8 @@ export class InformationService {
     ),
   ];
 
+  // private videos: Information[] = [];
+
   constructor() {}
 
   setVideos(videos: Information[]) {

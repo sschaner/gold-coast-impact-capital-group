@@ -1,11 +1,11 @@
 export class Information {
-  public title: string;
-  public description: string;
-  public videoPath: string;
+  public videoTitle: string;
+  public videoDescription: string;
+  public videoURL: string;
 
-  constructor(title: string, description: string, videoPath: string) {
-    this.title = title;
-    this.description = description;
-    this.videoPath = videoPath;
+  constructor(videoTitle: string, videoDescription: string, videoURL: string) {
+    this.videoTitle = videoTitle;
+    this.videoDescription = videoDescription;
+    this.videoURL = videoURL;
   }
 }

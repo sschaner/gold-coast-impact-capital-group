@@ -15,4 +15,79 @@
     [video]="videoEl"
     [index]="i"
   ></app-information-item>
+
+  <div class="card">
+    <form ngNativeValidate (ngSubmit)="onSubmit(videoForm)" #videoForm="ngForm">
+      <div class="card-body">
+        <h5 class="card-title">Want to Upload Another Video?</h5>
+
+        <div class="form-group row">
+          <label for="video-title">Video Title:</label>
+          <div>
+            <input
+              id="video-title"
+              type="text"
+              class="form-control"
+              ngModel
+              name="videoTitle"
+              required
+              #videoTitle="ngModel"
+            />
+            <span
+              class="form-text error-message"
+              *ngIf="!videoTitle.valid && videoTitle.touched"
+              >Please enter a title.</span
+            >
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="video-description">Video Description:</label>
+          <div>
+            <input
+              id="video-description"
+              type="text"
+              class="form-control"
+              ngModel
+              name="videoDescription"
+              required
+              #videoDescription="ngModel"
+            />
+            <span
+              class="form-text error-message"
+              *ngIf="!videoDescription.valid && videoDescription.touched"
+              >Please enter a description.</span
+            >
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label for="video-url">Video URL:</label>
+          <div>
+            <input
+              id="video-url"
+              type="text"
+              class="form-control"
+              ngModel
+              name="videoURL"
+              required
+              #videoURL="ngModel"
+            />
+            <span
+              class="form-text error-message"
+              *ngIf="!videoURL.valid && videoURL.touched"
+              >Please enter a video URL.</span
+            >
+          </div>
+        </div>
+        <button
+          type="submit"
+          class="btn btn-primary btn-video-submit"
+          [disabled]="!videoForm.valid"
+        >
+          Submit
+        </button>
+      </div>
+    </form>
+  </div>
 </div>
