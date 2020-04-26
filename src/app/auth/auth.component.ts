@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { environment } from "../../environments/environment";
+import { environment } from "../../environments/environments";
 import { NgForm } from "@angular/forms";
 import { Router } from "@angular/router";
 import { AuthService } from "./auth.service";
@@ -48,7 +48,7 @@ export class AuthComponent implements OnInit {
       (resData) => {
         console.log(resData);
         this.isLoading = false;
-        this.router.navigate(['/users']);
+        this.router.navigate(["/users"]);
       },
       (errorMesssage) => {
         console.log(errorMesssage);

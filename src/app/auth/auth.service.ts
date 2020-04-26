@@ -4,7 +4,7 @@ import { catchError, tap } from "rxjs/operators";
 import { throwError, BehaviorSubject } from "rxjs";
 import { AuthUser } from "./auth-user.model";
 import { Router } from "@angular/router";
-import { environment } from "src/environments/environment";
+import { environment } from "src/environments/environments";
 
 export interface AuthResponseData {
   kind: string;
