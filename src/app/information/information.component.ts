@@ -5,6 +5,7 @@ import { Subscription } from "rxjs";
 import { Information } from "./information.model";
 import { DataStorageService } from "../shared/data-storage.service";
 import { InformationService } from "./information.service";
+import { AuthService } from "../auth/auth.service";
 
 @Component({
   selector: "app-information",
@@ -18,7 +19,8 @@ export class InformationComponent implements OnInit {
 
   constructor(
     private dataStorageService: DataStorageService,
-    private informationService: InformationService
+    private informationService: InformationService,
+    public authService: AuthService
   ) {}
 
   ngOnInit() {

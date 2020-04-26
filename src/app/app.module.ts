@@ -20,6 +20,7 @@ import { LoadingSpinnerComponent } from "./shared/loading-spinner/loading-spinne
 import { InformationService } from "./information/information.service";
 import { InformationItemComponent } from "./information/information-item/information-item.component";
 import { SafePipe } from "./information/information-item/safePipe";
+import { AuthService } from "./auth/auth.service";
 
 @NgModule({
   declarations: [
@@ -39,7 +40,7 @@ import { SafePipe } from "./information/information-item/safePipe";
     SafePipe,
   ],
   imports: [BrowserModule, FormsModule, HttpClientModule, AppRoutingModule],
-  providers: [UserService, InformationService],
+  providers: [UserService, InformationService, AuthService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

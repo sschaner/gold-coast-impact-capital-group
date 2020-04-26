@@ -19,6 +19,7 @@ export interface AuthResponseData {
 @Injectable({ providedIn: "root" })
 export class AuthService {
   authUser = new BehaviorSubject<AuthUser>(null);
+  loggedIn = false;
 
   constructor(private http: HttpClient, private router: Router) {}
 
@@ -66,8 +67,17 @@ export class AuthService {
             resData.idToken,
             +resData.expiresIn
           );
+          this.loggedIn = true;
         })
       );
+  }
+
+  isLoggedIn() {
+    if (this.loggedIn) {
+      return true;
+    } else {
+      return false;
+    }
   }
 
   autoLogin() {
@@ -100,6 +110,7 @@ export class AuthService {
   logout() {
     this.authUser.next(null);
     this.router.navigate(["/"]);
+    this.loggedIn = false;
   }
 
   private handleAuthentication(

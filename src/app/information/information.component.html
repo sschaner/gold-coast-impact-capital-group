@@ -16,7 +16,7 @@
     [index]="i"
   ></app-information-item>
 
-  <div class="card">
+  <div *ngIf="authService.isLoggedIn()" class="card">
     <form ngNativeValidate (ngSubmit)="onSubmit(videoForm)" #videoForm="ngForm">
       <div class="card-body">
         <h5 class="card-title">Want to Upload Another Video?</h5>
