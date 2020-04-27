@@ -8,17 +8,17 @@ const API_KEY = functions.config().sendgrid.key;
 const TEMPLATE_ID = functions.config().sendgrid.template;
 sgMail.setApiKey(API_KEY);
 
-export const onMessageCreate = functions.database
-  .ref("users/{arrayId}/userContactInformation")
-  .onCreate((snapshot) => {
-    const messageData = snapshot.val();
-    const firstName = addPizzazz(messageData.firstName);
-    return snapshot.ref.update({ firstName: firstName });
-  });
+// export const onMessageCreate = functions.database
+//   .ref("users/{arrayId}/userContactInformation")
+//   .onCreate((snapshot) => {
+//     const messageData = snapshot.val();
+//     const firstName = addPizzazz(messageData.firstName);
+//     return snapshot.ref.update({ firstName: firstName });
+//   });
 
-function addPizzazz(firstName: string): string {
-  return firstName.replace(/\bSteven\b/g, "Memphis");
-}
+// function addPizzazz(firstName: string): string {
+//   return firstName.replace(/\bSteven\b/g, "Memphis");
+// }
 
 export const welcomeEmail = functions.database
   .ref("users/{arrayId}")
