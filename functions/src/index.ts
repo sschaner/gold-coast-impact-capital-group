@@ -28,7 +28,7 @@ export const welcomeEmail = functions.database
     const userFirstName = messageData.userContactInformation.firstName;
     const msg = {
       to: userEmail,
-      from: "info@waveimpactcapitalgroup.com",
+      from: "schanerst@gmail.com",
       templateId: TEMPLATE_ID,
       dynamic_template_data: {
         subject: "Thank You for Contacting Us for More Information.",
